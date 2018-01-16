@@ -42,7 +42,7 @@
     const walk = 100;
 
     function shadow(e) {
-      const {
+      let {
         offsetWidth: width,
         offsetHeight: height
       } = hero;
@@ -50,6 +50,7 @@
         offsetX: x,
         offsetY: y
       } = e;
+      // console.log(x, y);
       if (this !== e.target) {
         x += e.target.offsetLeft;
         y += e.target.offsetTop;
@@ -63,7 +64,7 @@
       ${-xWalk}px ${yWalk}px 0 rgba(0,255,255,0.7),
       ${xWalk}px ${-yWalk}px 0 rgba(255,255,0,0.7),
       ${-xWalk}px ${-yWalk}px 0 rgba(255,0,0,0.7)`;
-      console.log(xWalk, yWalk);
+      // console.log(xWalk, yWalk);
     }
 
     hero.addEventListener('mousemove', shadow);
